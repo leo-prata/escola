@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 import * as actions from './actions';
 import * as types from '../types';
 
-const req = () => new Promise((resolve, reject) => {
+const req = () => new Promise(resolve => {
     setTimeout(() => {
         resolve();
-    }, 2000);
+    }, 600);
 });
 
 function* exampleReq(){
