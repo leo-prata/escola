@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export default function Header(){
-    const buttonClicked = useSelector(state => state.buttonClick); // " state.buttonClick " vindo do Store  
+    const buttonClicked = useSelector(state => state.example.buttonClick); // " state.buttonClick " vindo do Store  
     return(
         <Nav>
             <Link to='/'>Home</Link>
