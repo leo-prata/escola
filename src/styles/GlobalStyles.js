@@ -50,16 +50,10 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.section`
-    max-width: 360px;
+    max-width: 700px;
     background: white;
+    margin: 30px auto;
     padding: 30px;
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
 `;
