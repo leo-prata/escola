@@ -4,9 +4,9 @@ import { persistReducer } from 'redux-persist';
 export default function reduxPer(reducers){
     const persistedReducers = persistReducer(
         {
-            key: 'APP_NAME',
+            key: 'ESCOLA',
             storage,
-            whitelist: ['example'], //coming from rootReducer's key
+            whitelist: ['auth'], //coming from rootReducer's key
         },
         reducers);
 
