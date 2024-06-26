@@ -46,10 +46,7 @@ export default function Aluno(){
     
     return (
         <Container>
-            <Title>Alunos</Title>
-
-            <NovoAluno to='/aluno/'>Novo aluno</NovoAluno>
-
+            <Title>ALUNOS</Title>
             <AlunosContainer>
                 {alunos.map((aluno, index) => (
                     <div key={String(aluno.id)}>
@@ -67,14 +64,8 @@ export default function Aluno(){
                         </div>
                     </div>
                 ))}
+               <NovoAluno to='/aluno/'>CRIAR NOVO ALUNO</NovoAluno> 
             </AlunosContainer>
         </Container>
     );
 }
-
-/*{alunos.map(aluno => (
-    <div key={String(aluno.id)}>
-        <img crossOrigin="" src={aluno.Fotos[0].url} alt=''></img>
-    </div>
-))}
-*/

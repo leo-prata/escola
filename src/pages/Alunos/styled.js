@@ -1,36 +1,58 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import * as colors from '../../config/colors';
 
 export const AlunosContainer = styled.div`
-    color: black;
+    
+    color: white;
     margin-top: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    
     div {
+        width: 100%;
+        max-width: 500px; 
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 5px 0;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 10px;
+        gap: 125px; 
+        border: 0.5px solid rgb(172, 172, 172);
+        border-radius: 3px;
+        margin-bottom: 4px;
     }
 
-    div + div {
-        border-top: 1px solid #eee;
-    }
     .actionButtons {
         display: flex;
-        gap: 10px; 
+        justify-content: flex-end;
+        gap: 10px;
+        border: none;
     }
 
     .excl {
-        color: ${colors.primaryColor}
+        color: white;
     }
+    
 `
 
 export const Title = styled.h1`
     text-align: center;
+    font-size: 30px;
+    font-weight: bold;
 `
 
 export const NovoAluno = styled(Link)`
-    display: block;
-    padding: 10px;
+    display: inline-block; 
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px 20px; 
+    background-color: rgb(15, 15, 15); 
+    color: white; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    justify-content: center;
+
 `

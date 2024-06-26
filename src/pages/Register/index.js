@@ -54,7 +54,7 @@ export default function Register(){
     
     return (
         <Container>
-            <Title>{id ? 'Editar dados da conta' : 'Crie sua conta!'}</Title>
+            <Title>{id ? 'EDITAR DADOS DA CONTA' : 'CRIE SUA CONTA!'}</Title>
 
             <Form onSubmit={handleSubmit}>
                 <label htmlFor='nome'>
@@ -71,7 +71,7 @@ export default function Register(){
                     Password:
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                 </label>
-                <button type='submit'>{id ? 'Atualizar dados' : 'Criar minha conta'}</button>
+                <button type='submit'>{id ? 'ATUALIZAR DADOS' : 'CRIAR MINHA CONTA'}</button>
             </Form>
         </Container>
     );

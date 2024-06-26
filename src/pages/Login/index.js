@@ -37,7 +37,7 @@ export default function Login(props){
 
     return (
         <Container>
-            <Title>Login</Title>
+            <Title>LOGIN</Title>
 
             <Form onSubmit={handleSubmit}>
                 <label htmlFor='email'>
@@ -49,7 +49,7 @@ export default function Login(props){
                     Password:
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                 </label>
-                <button type='submit'>Entrar</button>
+                <button type='submit'>ENTRAR</button>
             </Form>
         </Container>
     );

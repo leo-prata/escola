@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as colors from '../../config/colors';
 
 export const Title = styled.h1`
     text-align: center;
@@ -27,7 +26,7 @@ export const Form = styled.form`
         margin-top: 4px;
 
         &:focus {
-            border: 1px solid ${colors.primaryColor};
+            border: 1px solid rgb(15, 15, 15);
         }
     }
 `;
