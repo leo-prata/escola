@@ -21,6 +21,32 @@ export default function red(state = initialState, action) {
             const newState = {...initialState};
             return newState;
         }
+
+        case types.LOGIN_REQUEST:{
+            const newState = {...state};
+            return newState;
+        }
+
+        case types.REGISTER_UPDATED_SUCCESS:{
+            const newState = {...state};
+            newState.user.nome = action.payload.nome;
+            newState.user.email = action.payload.email;
+            return newState;
+        }
+        case types.REGISTER_CREATED_SUCCESS:{
+            const newState = {...state};
+            return newState;
+        }
+
+        case types.REGISTER_REQUEST:{
+            const newState = {...state};
+            return newState;
+        }
+
+        case types.REGISTER_FAILURE:{
+            const newState = {...state};
+            return newState;
+        }
         
         default: {
             return state;

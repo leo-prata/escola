@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { get } from 'lodash'
 import { isEmail } from 'validator';
 import { Container } from '../../styles/GlobalStyles';
 import { Form, Title } from './styled';
-import axios from '../../services/axios';
-import history from '../../services/history';
+import * as actions from '../../store/modules/auth/actions';
 
-export default function Register(){  
+
+export default function Register(){ 
+    const dispatch = useDispatch(); 
+    
+    /*const id = useSelector((state) => state.auth.user ? state.auth.user.id : state.auth.id,);
+    const nomeStored = useSelector((state) => state.auth.user ? state.auth.user.nome : state.auth.nome,);
+    const emailStored = useSelector((state) => state.auth.user ? state.auth.user.email : state.auth.email,); */
+    const id = useSelector((state) => state.auth.user.id);
+    const nomeStored = useSelector((state) => state.auth.user.nome);
+    const emailStored = useSelector((state) => state.auth.user.email);
+  
     const [email, setEmail] = useState('');
     const [nome, setNome] = useState('');
     const [password, setPassword] = useState('');
+
+    React.useEffect(() => {
+        if(!id) return;
+        setNome(nomeStored);
+        setEmail(emailStored);
+    }, [emailStored, id, nomeStored]);
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -22,7 +37,7 @@ export default function Register(){
             toast.error('Nome de tamanho inválido');
         }
 
-        if(password.length<3 || password.length > 20){
+        if(!id && (password.length<3 || password.length > 20)){
             formErrors = true;
             toast.error('Senha de tamanho inválido');
         }
@@ -34,25 +49,12 @@ export default function Register(){
 
         if(formErrors) return;
 
-        try{
-            await axios.post('/users/', {
-                nome,
-                password,
-                email
-            })
-
-            toast.success("Conta criada com sucesso!");
-            history.push('/');
-        }catch(err){
-            const errors = get(err, 'response.data.errors', []); //.errors vem do objeto criado para armazenar os erros lá na API
-            errors.map(error => toast.error(error));
-        }
-        
+        dispatch(actions.registerRequest({ nome, email, password, id}));
     }
     
     return (
         <Container>
-            <Title>Crie sua conta!</Title>
+            <Title>{id ? 'Editar dados da conta' : 'Crie sua conta!'}</Title>
 
             <Form onSubmit={handleSubmit}>
                 <label htmlFor='nome'>
@@ -69,7 +71,7 @@ export default function Register(){
                     Password:
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                 </label>
-                <button type='submit'>Criar minha conta</button>
+                <button type='submit'>{id ? 'Atualizar dados' : 'Criar minha conta'}</button>
             </Form>
         </Container>
     );
