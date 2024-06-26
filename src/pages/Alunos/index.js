@@ -2,7 +2,7 @@ import React from 'react';
 import { get } from 'lodash';
 import { Link } from 'react-router-dom';
 import { Container } from '../../styles/GlobalStyles';
-import { AlunosContainer, Title } from './styled';
+import { AlunosContainer, Title, NovoAluno } from './styled';
 import { FaEdit, FaWindowClose, FaExclamation } from 'react-icons/fa';
 import axios from '../../services/axios';
 import { toast } from 'react-toastify';
@@ -48,6 +48,8 @@ export default function Aluno(){
         <Container>
             <Title>Alunos</Title>
 
+            <NovoAluno to='/aluno/'>Novo aluno</NovoAluno>
+
             <AlunosContainer>
                 {alunos.map((aluno, index) => (
                     <div key={String(aluno.id)}>
@@ -60,6 +62,7 @@ export default function Aluno(){
                                 display='none' 
                                 cursor='pointer'
                                 onClick={e => handleDelete(e, aluno.id, index)}
+                                className='excl'
                             />
                         </div>
                     </div>

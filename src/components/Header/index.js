@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav } from './styled';
 import { Link } from 'react-router-dom';
-import { FaCircle } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/modules/auth/actions';
 import history from '../../services/history';
@@ -39,7 +38,6 @@ export default function Header(){
                 <Link to='/login'>Login</Link>
             )}
             
-            {isLoggedIn && <FaCircle size={24} color='#66ff33' />}
             </div>            
         </Nav>    
     );
