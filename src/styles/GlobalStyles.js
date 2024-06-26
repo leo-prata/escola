@@ -12,7 +12,8 @@ export default createGlobalStyle`
 
     body{
         font-family: 'Helvetica', serif;
-        background: linear-gradient(to right, rgb(71, 71, 71), rgb(51, 50, 50));
+        //background: linear-gradient(to right, rgb(71, 71, 71), rgb(51, 50, 50));
+        background: linear-gradient(to right, rgb(46, 46, 46), rgb(38, 38, 38));
         color: white;
         
     }
@@ -60,9 +61,10 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.section`
-    max-width: 1200px;
+    max-width: 1250px;
     min-height: 520px;
-    background: rgb(36, 34, 34);
+    //background: rgb(36, 34, 34);
+    background: #1A1A1D;
     margin: 30px auto 30px;
     padding: 30px;
     border-radius: 4px;
