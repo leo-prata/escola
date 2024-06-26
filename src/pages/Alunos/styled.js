@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AlunosContainer = styled.div`
     color: black;
-    margin-top: 20px;
+    margin-top: 25px;
 
     div {
         display: flex;
@@ -14,4 +14,12 @@ export const AlunosContainer = styled.div`
     div + div {
         border-top: 1px solid #eee;
     }
+    .actionButtons {
+        display: flex;
+        gap: 10px; 
+    }
+`
+
+export const Title = styled.h1`
+    text-align: center;
 `

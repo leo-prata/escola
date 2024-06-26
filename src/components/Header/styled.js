@@ -6,11 +6,21 @@ export const Nav = styled.nav`
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between; /* Alterado de right para space-between */
+
+    .links {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
 
     a{
         color: whitesmoke;
         margin: 0 10px 0;
         font-weight: bold;
+    }
+    img {
+        width: 40px;
+        height: 40px;
     }
 `;
